@@ -43,7 +43,7 @@ app.get("/login/facebook/callback", passport.authenticate("facebook", { failureR
   res.redirect("/");
 });
 
-app.get("/profile", require('connect-ensure-login').ensureLoggedIn(), (req, res) {
+app.get("/profile", require('connect-ensure-login').ensureLoggedIn(), (req, res) => {
   res.render("profile", { user: req.user });
 });
 
