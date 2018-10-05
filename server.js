@@ -7,7 +7,7 @@ var port = process.env.PORT || 3000;
 passport.use(new Strategy({
   clienID: "146724319613131",
   clientSecret: "90c0eed01e47d4f2433efeb87b6f05ad",
-  callbackURL: "http://localhost:3000/login/facebook/return"
+  callbackURL: "https://whispering-plateau-11004.herokuapp.com/login/facebook/callback"
 }, function (accessToken, refreshToken, profile, cb) {
   return cb(null, profile);
 }));
