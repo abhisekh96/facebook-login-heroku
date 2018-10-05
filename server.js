@@ -4,8 +4,8 @@ const strategy = require('passport-facebook').Strategy;
 
 var port = process.env.PORT || 3000;
 
-passport.use(new Strategy({
-  clienID: "146724319613131",
+passport.use(new strategy({
+  clientID: "146724319613131",
   clientSecret: "90c0eed01e47d4f2433efeb87b6f05ad",
   callbackURL: "https://whispering-plateau-11004.herokuapp.com/login/facebook/callback"
 }, function (accessToken, refreshToken, profile, cb) {
