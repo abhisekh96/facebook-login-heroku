@@ -47,4 +47,4 @@ app.get("/profile", require('connect-ensure-login').ensureLoggedIn(), (req, res)
   res.render("profile", { user: req.user });
 });
 
-app.listen(port, () => console.log("Server is running at port 3000"));
+app.listen(port);
