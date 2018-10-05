@@ -1,0 +1,28 @@
+{
+  "name": "facebooklogin",
+  "version": "1.0.0",
+  "description": "facebook login app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "facebook"
+  ],
+  "author": "Abhisekh Hota",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1"
+  },
+  "engines": {
+    "node": "10.11.0"
+  }
+}
