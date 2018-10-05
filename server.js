@@ -3,6 +3,10 @@ const passport = require('passport');
 const strategy = require('passport-facebook').Strategy;
 
 var port = process.env.PORT || 3000;
+var app = express();
+
+app.set("views", __dirname + "/views");
+app.set("view engine", "ejs");
 
 passport.use(new strategy({
   clientID: "146724319613131",
@@ -20,14 +24,12 @@ passport.deserializeUser(function (obj, cb) {
   cb(null, obj);
 });
 
-var app = express();
-app.set("views", __dirname + "/views");
-app.set("view engine", "ejs");
-
 app.use(require('morgan')('combined'));
 app.use(require('cookie-parser')());
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('express-session')({ secret: "lco app", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get("/", (req, res) => {
   res.render("home", { user: req.user });
