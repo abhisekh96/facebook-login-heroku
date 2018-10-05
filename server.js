@@ -11,7 +11,8 @@ app.set("view engine", "ejs");
 passport.use(new strategy({
   clientID: "146724319613131",
   clientSecret: "90c0eed01e47d4f2433efeb87b6f05ad",
-  callbackURL: "https://whispering-plateau-11004.herokuapp.com/login/facebook/callback"
+  callbackURL: "https://whispering-plateau-11004.herokuapp.com/login/facebook/callback",
+  profileFields: ['id', 'displayName', 'photos', 'email']
 }, function (accessToken, refreshToken, profile, cb) {
   return cb(null, profile);
 }));
